@@ -6,7 +6,28 @@ import visualIcon from "../../assets/icon-visual.svg"
 import { useEffect, useState } from "react";
 import { api } from "../../lib/axios";
 
-
+const categorys = [
+  {
+    "category": "Reaction",
+    "score": 80,
+    "icon": "../../assets/icon-memory.svg"
+  },
+  {
+    "category": "Memory",
+    "score": 92,
+    "icon": "./assets/images/icon-memory.svg"
+  },
+  {
+    "category": "Verbal",
+    "score": 61,
+    "icon": "./assets/images/icon-verbal.svg"
+  },
+  {
+    "category": "Visual",
+    "score": 72,
+    "icon": "./assets/images/icon-visual.svg"
+  }
+];
 
 interface Category {
   category: string;
@@ -19,11 +40,7 @@ export function Home () {
   const [category, setCategory] = useState<Category[]>([])
 
   async function fetchCategorys() {
-
-    const response = await api.get('', {
-     
-    })
-    setCategory(response.data)
+    setCategory(categorys)
   }
 
   useEffect(() => {
