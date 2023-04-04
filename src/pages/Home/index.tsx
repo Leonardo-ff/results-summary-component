@@ -20,7 +20,7 @@ export function Home () {
 
   async function fetchCategorys() {
 
-    const response = await api.get('categorys', {
+    const response = await api.get('', {
      
     })
     setCategory(response.data)
